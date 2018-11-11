@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#modalroot {
+  position: relative;
+  z-index: 999;
+}
