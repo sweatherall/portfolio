@@ -4,10 +4,8 @@ import Lightbox from '../../lightbox/Lightbox'
 class Project extends Component {
   constructor(props) {
     super(props)
-    this.focusOnProject = this.focusOnProject.bind(this)
-
     this.state = {showLightbox: false};
-    this.handleShow = this.handleShow.bind(this);
+    this.focusOnProject = this.focusOnProject.bind(this)
     this.handleHide = this.handleHide.bind(this);
   }
   
@@ -16,10 +14,6 @@ class Project extends Component {
   }
 
   focusOnProject() {
-    // when you click on a project_preview
-    // open a modal with larger view, more information
-    console.log('focus on project!');
-    console.log(this);
     this.setState({showLightbox: true});
   }
 
