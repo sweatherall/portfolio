@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class Auth extends Component {
+class Signup extends Component {
   constructor(props) {
     super(props)
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -34,7 +34,7 @@ class Auth extends Component {
             <input type='password' id='password' onChange={this.handleInputChange}/>
           </div>
           <div className='login_button_container'>
-            <button className='login_button' onClick={this.handleSumbit}> login </button>
+            <button className='login_button' onClick={this.handleSumbit}> create </button>
           </div>
         </form>
       </div>
@@ -42,4 +42,4 @@ class Auth extends Component {
   }
 }
 
-export default Auth
+export default Signup

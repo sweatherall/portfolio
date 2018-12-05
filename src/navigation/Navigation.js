@@ -8,7 +8,8 @@ function Navigation() {
       <NavLink to="/textual">textual</NavLink>
       <NavLink to="/personal">personal</NavLink>
 
-      <NavLink to="/auth">log in</NavLink>
+      <NavLink to="/portal">!!!</NavLink>
+      <NavLink to="/admin">admin</NavLink>
     </nav>
   )
 }

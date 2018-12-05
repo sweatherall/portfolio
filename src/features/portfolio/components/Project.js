@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Lightbox from '../../lightbox/Lightbox'
+import ProjectDetails from './ProjectDetails'
 
 class Project extends Component {
   constructor(props) {
@@ -22,8 +23,11 @@ class Project extends Component {
     const lightbox = this.state.showLightbox ? (
       <Lightbox>
         <div className="modal">
-          render project details here....
+
+          <ProjectDetails project={this.props.project}></ProjectDetails>
+
           <button onClick={this.handleHide}>Hide modal</button>
+
         </div>
       </Lightbox>
     ) : null;

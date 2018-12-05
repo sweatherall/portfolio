@@ -1,12 +1,14 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import CreateProject from './components/CreateProject';
 
-class AdminUpload extends Component {
+class CreationStation extends Component {
   constructor(props) {
     super(props)
     this.state = {
       projects: [],
       newProject: {
         name: '',
+        description: '',
         type: '',
         images: [], // image object = { order: num, previewImage: boolean }
         tags: [],
@@ -18,6 +20,7 @@ class AdminUpload extends Component {
     this.addProject = this.addProject.bind(this)
     this.removeProject = this.removeProject.bind(this)
     this.editProject = this.editProject.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   uploadProjectImage() {
@@ -25,7 +28,8 @@ class AdminUpload extends Component {
     console.log(this);
   }
 
-  addProject() {
+  addProject(e) {
+    e.preventDefault();
     console.log("Add Project");
   }
 
@@ -37,6 +41,17 @@ class AdminUpload extends Component {
     console.log("edit Project");
   }
 
+  handleChange = (e) => {
+    e.persist()
+    this.setState(prevState => ({
+      newProject: {
+        ...prevState.newProject,
+        [e.target.id]: e.target.value
+      }
+    }))
+    console.log(this.state)
+  }
+
   render () {
     return (
 
@@ -45,18 +60,9 @@ class AdminUpload extends Component {
       // ability to edit a project
 
       // creating a new project preview
-      // allow for multiple images
-      <div className='admin_upload_container'>
-        <p> creation station </p>
-        <input className='project_name_input'/>
-        <input className='project_description_input'/>
-
-        <input className='project_img_upload'/>
-
-        <button onClick={this.addProject} id="add_project_btn"> Add Project </button>
-      </div>
+      <CreateProject/>
     )
   }
 }
 
-export default AdminUpload
+export default CreationStation
